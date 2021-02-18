@@ -109,7 +109,7 @@ s = 0.8;
 par=[3.8, -0.6, 60, s]; % par(1) = lambda, par(2) = sigma, par(3) = d, par(4)=s
 lambda_c= sqrt(60*(3-sqrt(8))); 
 kc=((60-lambda_c^2)/(2*60))^(1/(2*s)); % domain size depends on s 
-lx=5*pi/kc; nx=2800; 
+lx=5*pi/kc; nx=1900; 
 p=schnakinit(p,lx,nx,par); p=setfn(p,'h1D');
 p=findbif(p,6); % many bif-points close to each other, use findbif 
 p=cont(p,4000);  % a few more steps (for later plotting)  
@@ -118,7 +118,7 @@ p=swibra('h1D','bpt1','1D1',-0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400)
 p=swibra('h1D','bpt2','1D2',-0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
 p=swibra('h1D','bpt3','1D3',-0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
 p=swibra('h1D','bpt4','1D4',-0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
-p=swibra('1D1','bpt2','sn1D',-0.1); p.nc.dsmax=1e-2; p. p=cont(p,6500);
+p=swibra('1D1','bpt1','sn1D',-0.1); p.nc.dsmax=1e-2; p. p=cont(p,660);
 
 
 % final figurestudy
@@ -154,7 +154,7 @@ s = 0.73;
 par=[3.8, -0.6, 60, s]; % par(1) = lambda, par(2) = sigma, par(3) = d, par(4)=s
 lambda_c= sqrt(60*(3-sqrt(8))); 
 kc=((60-lambda_c^2)/(2*60))^(1/(2*s)); % domain size depends on s 
-lx=5*pi/kc; nx=2800; 
+lx=5*pi/kc; nx=2600; 
 p=schnakinit(p,lx,nx,par); p=setfn(p,'h1D');
 p=findbif(p,6); % many bif-points close to each other, use findbif 
 p=cont(p,4000);  % a few more steps (for later plotting)  
@@ -163,7 +163,7 @@ p=swibra('h1D','bpt1','1D1',0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
 p=swibra('h1D','bpt2','1D2',0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
 p=swibra('h1D','bpt3','1D3',0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
 p=swibra('h1D','bpt4','1D4',0.1); p.nc.dsmax=1e-1; p.nc.lammin=2; p=cont(p,400);
-p=swibra('1D1','bpt2','sn1D',0.1); p.nc.dsmax=1e-2; p. p=cont(p,8500);
+p=swibra('1D1','bpt2','sn1D',0.1); p.nc.dsmax=1e-2; p. p=cont(p,550);
 
 
 % final figure
@@ -181,4 +181,4 @@ xlim([2.9 3.8]);
 ylabel('$||u||_{L^8}$', 'Interpreter', 'latex');
 xlabel('$\mu$', 'Interpreter', 'latex');
 box on
-hgexport(f1, './figures/schnak-bifurcation-s0p7.eps')
+hgexport(f1, './figures/schnak-bifurcation-s0p73.eps')
